@@ -6,6 +6,11 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+
+   let array = Object.entries(objeto);
+
+   return array;
+
 }
 
 function numberOfCharacters(string) {
@@ -13,7 +18,13 @@ function numberOfCharacters(string) {
    // letras del string, y su valor es la cantidad de veces que se repite en el string.
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
-   // Tu código:
+   // Tu código:   
+
+   let array = string.split("").sort((a,b) => a > b ? 1 : -1)
+   
+   const resultado = array.reduce((acum, curr) => ((acum[curr] = acum[curr] + 1 || 1), acum), {})
+   
+   return resultado
 }
 
 function capToFront(string) {
@@ -22,6 +33,18 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+
+   var mayuscula = '';
+   var minuscula = '';
+   for (i = 0; i<string.length; i++){ 
+     if(string[i] === string[i].toUpperCase()){ 
+          mayuscula = mayuscula + string[i]; 
+       }
+      else {
+          minuscula = minuscula + string[i];
+        } 
+      }       
+      return (mayuscula + minuscula) 
 }
 
 function asAmirror(frase) {
@@ -29,12 +52,18 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+
+   var newfrase = frase.split(" ").map((idex) => {return idex.split("").reverse().join("");}).join(" ");
+
+      return newfrase;
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+
+   
 }
 
 function deleteAbc(string) {
